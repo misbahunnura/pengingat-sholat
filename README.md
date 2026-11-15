@@ -3,6 +3,18 @@
 Jadwal salat nyata (Aladhan API, metode Kemenag RI), hitung mundur, pencarian kota, GPS,
 pengingat + azan, kumpulan doa, favorit, tema gelap/terang, dan menu bawah ala aplikasi.
 
+## Link Website
+
+🔗 http://pengingat-sholat.ifree.page/
+
+## Anggota Kelompok
+
+| No | Nama | NIM |
+|----|------|-----|
+| 1 | [Misbahun nura] | [24105111086] |
+| 2 | [Hayatun nufus] | [24105111070] |
+| 3 | [Nelly agustiani] | [24105111119] |
+
 Fitur dengan database (SQLite, tanpa perlu MySQL):
 
 | Fitur | Keterangan |
