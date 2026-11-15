@@ -1,0 +1,3 @@
+Taruh file azan Anda di sini dengan nama: azan.mp3
+(tidak disertakan karena rekaman azan punya hak cipta masing-masing).
+Jika file ini belum ada, pengingat tetap berbunyi memakai nada lonceng sederhana.

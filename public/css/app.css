@@ -1,0 +1,126 @@
+/* Pengingat Salat — gaya dari desain v4 */
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+
+/* Tema: diatur lewat atribut data-t pada <html> (dark = bawaan) */
+:root{--bg:#f6f3ea;--kartu:#fff;--teks:#14201d;--sub:#6b7a75;--garis:#e6e1d3;--hero:#0b3d36;--emas:#e0b64a;--chip:#eef5f1;--chipt:#0b3d36;--aktif:#e0b64a;--aktift:#3a2a00;--bg-danger:#fcebeb;--text-danger:#a32d2d}
+:root[data-t=dark]{--bg:#000;--kartu:#0e0e0e;--teks:#f3ecd9;--sub:#9b927b;--garis:#2b2515;--hero:#15120a;--emas:#e6bf5a;--chip:#1a160b;--chipt:#ecc866;--aktif:#e6bf5a;--aktift:#1a1300;--bg-danger:#3a1515;--text-danger:#f2a5a5}
+
+body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--teks);line-height:1.45}
+button,input{font-family:inherit}
+button{cursor:pointer}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Pembungkus halaman (ala aplikasi) */
+.w{max-width:520px;margin:0 auto;min-height:100vh;min-height:100dvh;padding:14px 14px calc(96px + env(safe-area-inset-bottom));position:relative}
+.w input{width:100%;height:42px;padding:8px 12px;font-size:16px;outline:none}
+.w input:focus{border-color:var(--emas)!important}
+.w button:focus-visible,.w .tabs div:focus-visible,.w .ch:focus-visible,.w .dd div:focus-visible{outline:2px solid var(--emas);outline-offset:2px}
+.w .top{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.w .lg{margin-right:auto;font-size:16px;font-weight:500;display:flex;align-items:center;gap:8px}
+.w .lg i{background:var(--hero);color:var(--emas);width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.w .ic{background:var(--kartu);border:1px solid var(--garis);width:34px;height:34px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teks);position:relative}
+.w .dot b{position:absolute;top:4px;right:4px;width:9px;height:9px;border-radius:50%;background:#e24b4a;display:block}
+.w .dot.on b{background:#22c55e}
+.w .hero{background:var(--hero);border-radius:18px;padding:18px 18px 20px;position:relative;overflow:hidden;text-align:center;color:#fff;margin-bottom:12px}
+.w .hero svg{position:absolute;inset:0;width:100%;height:100%;opacity:.08}
+.w .hero>*:not(svg){position:relative}
+.w .bar{height:6px;background:rgba(255,255,255,.2);border-radius:3px;margin:12px auto 6px;max-width:300px}
+.w .bar>div{height:100%;background:var(--emas);border-radius:3px}
+.w .bt{background:var(--emas);color:#2a1f00;border:0;border-radius:24px;padding:12px 24px;font-size:15px;font-weight:500;margin-top:10px;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.w .bt.on{background:#fff;color:#0b6b4a}
+.w .cari{position:relative;margin-bottom:12px}
+.w .cari input{width:100%;padding-left:36px;background:var(--kartu);color:var(--teks);border:1px solid var(--garis);border-radius:12px}
+.w .cari>i{position:absolute;left:12px;top:10px;font-size:18px;color:var(--sub)}
+.w .dd{background:var(--kartu);border:1px solid var(--garis);border-radius:12px;margin-top:6px;overflow:hidden}
+.w .dd div{padding:9px 14px;cursor:pointer;font-size:14px;display:flex;justify-content:space-between}
+.w .dd div:hover{background:var(--chip)}
+.w .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:10px}
+.w .c{background:var(--kartu);border:1px solid var(--garis);border-radius:14px;padding:12px 8px;text-align:center}
+.w .c i{font-size:22px;color:var(--sub)}
+.w .c p{margin:4px 0 0;font-size:13px;color:var(--sub)}
+.w .c b{font-weight:500;font-size:18px;display:block}
+.w .c.x{opacity:.5}
+.w .c.n{background:var(--aktif);border-color:var(--aktif);color:var(--aktift)}
+.w .c.n i,.w .c.n p{color:var(--aktift)}
+.w .cat{font-size:13px;color:var(--sub);margin:12px 2px 0;display:flex;gap:8px;align-items:center}
+.w .k{background:var(--kartu);border:1px solid var(--garis);border-radius:16px;padding:14px 16px;margin-bottom:10px}
+.w .ar{font-family:'Amiri',serif;font-size:28px;text-align:right;direction:rtl;line-height:2.1;margin:8px 0;background:var(--chip);border-radius:12px;padding:6px 14px;color:var(--chipt)}
+.w .ch{display:inline-block;font-size:13px;padding:5px 12px;border-radius:20px;background:var(--chip);color:var(--chipt);margin:0 6px 6px 0;cursor:pointer}
+.w .ch.a{background:var(--hero);color:#fff}
+.w .ab{display:flex;gap:8px;margin-top:8px}
+.w .ab button{background:var(--chip);color:var(--chipt);border:0;border-radius:20px;padding:6px 12px;font-size:13px;display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.w .ab button.f{background:var(--bg-danger);color:var(--text-danger)}
+.w .tabs{display:flex;background:var(--kartu);border:1px solid var(--garis);border-radius:18px;margin-top:14px;padding:6px}
+.w .tabs div{flex:1;text-align:center;padding:8px 4px;border-radius:12px;font-size:12px;color:var(--sub);cursor:pointer}
+.w .tabs div i{display:block;font-size:20px;margin-bottom:2px}
+.w .tabs div.a{background:var(--hero);color:#fff}
+.w .kosong{text-align:center;color:var(--sub);padding:24px 0;font-size:14px}
+
+/* Tambahan untuk versi web */
+.w .tabs{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));width:calc(100% - 28px);max-width:492px;margin:0;z-index:10;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.w .tabs div{user-select:none}
+.w .err{background:var(--bg-danger);color:var(--text-danger);border-radius:12px;padding:10px 14px;font-size:13px;margin-bottom:12px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+.w .err button{background:transparent;color:inherit;border:1px solid currentColor;border-radius:16px;padding:4px 12px;font-size:12px}
+.w .ab button.f{background:var(--bg-danger);color:var(--text-danger)}
+.w .cari input{padding-left:36px}
+.w .dd{position:absolute;left:0;right:0;z-index:5;max-height:260px;overflow:auto}
+.w .c b{font-variant-numeric:tabular-nums}
+#hitung{font-variant-numeric:tabular-nums}
+@media (min-width:560px){.w{margin-top:12px;min-height:calc(100vh - 24px)}}
+.w [hidden]{display:none!important}
+/* Akun, admin, catatan salat */
+.w a{color:var(--chipt)}
+.w a.lg{color:var(--teks);text-decoration:none}
+.w a.ic{text-decoration:none}
+.w .sub{font-size:13px;color:var(--sub)}
+.w .tengah{text-align:center;margin-top:12px}
+.w .info-ok{background:var(--chip);color:var(--chipt);border-radius:12px;padding:10px 14px;font-size:13px;margin-bottom:12px}
+.w .form h2{font-size:18px;font-weight:500;margin-bottom:4px}
+.w .form label{display:block;font-size:13px;color:var(--sub);margin:12px 0 4px}
+.w .form input:not([type=checkbox]),.w .form textarea{width:100%;background:var(--bg);color:var(--teks);border:1px solid var(--garis);border-radius:10px;padding:9px 12px;font-size:16px;font-family:inherit;outline:none}
+.w .form textarea{height:auto;resize:vertical}
+.w .form textarea:focus{border-color:var(--emas)}
+.w .form .cek{display:flex;align-items:center;gap:8px;color:var(--teks)}
+.w .form .cek input{width:auto;height:auto}
+.w .form .bt{width:100%;justify-content:center;margin-top:16px}
+.w .salah{color:var(--text-danger);font-size:12px;margin-top:4px}
+.w .baris{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.w .bt.kecil{padding:7px 14px;font-size:13px;margin:0;text-decoration:none}
+.w .item{display:flex;flex-direction:column;gap:8px;padding:10px 0;border-top:1px solid var(--garis)}
+.w .item .ab form{display:inline}
+.w .item .ab button,.w .tbl{background:var(--chip);color:var(--chipt);border:0;border-radius:20px;padding:6px 12px;font-size:13px;display:inline-flex;gap:6px;align-items:center;text-decoration:none}
+.w .item .ab button.f{background:var(--bg-danger);color:var(--text-danger)}
+.w .hal{display:flex;justify-content:space-between;font-size:13px;color:var(--sub);margin-top:12px}
+.w .jdl{font-size:15px;font-weight:500;margin:0 0 8px}
+.w .catatan{margin-top:12px}
+.w .cg{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.w .cb{background:var(--chip);color:var(--chipt);border:0;border-radius:12px;padding:8px 2px;font-size:12px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.w .cb i{font-size:20px}
+.w .cb.on{background:var(--hero);color:#fff}
+.w .cb.on i{color:var(--emas)}
+.w .mg{display:flex;gap:6px;align-items:flex-end;height:56px;margin-top:12px}
+.w .mb{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3px;font-size:11px;color:var(--sub)}
+.w .mb>div{width:100%;background:var(--emas);border-radius:4px 4px 0 0;min-height:3px}
+
+/* ---------- Lencana notifikasi & menu admin ---------- */
+.w .lcn{position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#e24b4a;color:#fff;font-size:10px;font-style:normal;font-weight:600;line-height:16px;text-align:center;box-sizing:border-box}
+.w .lcn-sebaris{position:static;display:inline-block;margin-left:4px;vertical-align:1px}
+.w .menu-adm{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.w .menu-adm .ch{margin:0;text-decoration:none}
+
+/* ---------- Mode gelap OLED: hitam pekat, aksen emas ---------- */
+:root[data-t=dark] .w .ch.a,
+:root[data-t=dark] .w .tabs div.a,
+:root[data-t=dark] .w .tabs a.a,
+:root[data-t=dark] .w .cb.on,
+:root[data-t=dark] .w .ay-ab button.on,
+:root[data-t=dark] .w .dz-tab button.a{background:var(--emas);color:var(--aktift);border-color:transparent}
+:root[data-t=dark] .w .hero,
+:root[data-t=dark] .w .bn-kartu,
+:root[data-t=dark] .w .qr-main{background:linear-gradient(145deg,#1d180b,#080703);border:1px solid rgba(230,191,90,.38);box-shadow:0 0 24px rgba(230,191,90,.07)}
+:root[data-t=dark] .w .lg i,
+:root[data-t=dark] .w .aks-i span,
+:root[data-t=dark] .w .nt-i,
+:root[data-t=dark] .w .kb-mark i{box-shadow:inset 0 0 0 1px rgba(230,191,90,.38)}
+:root[data-t=dark] .w .tabs{border:1px solid var(--garis)}
